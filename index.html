@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>物光口袋 · 更新</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px 20px 60px;
+    font: 16px/1.7 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #3d3630; background: #f7f3ee;
+    display: flex; justify-content: center;
+  }
+  .wrap { width: 100%; max-width: 520px; }
+  .card {
+    background: #fffdfa; border-radius: 18px; padding: 26px 22px;
+    box-shadow: 0 6px 26px rgba(120, 100, 80, .10);
+  }
+  h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: .5px; }
+  .sub { margin: 0 0 20px; color: #a99b8b; font-size: 13px; }
+  .ver {
+    display: inline-block; padding: 3px 11px; margin-bottom: 18px;
+    background: #fae8de; color: #b4674a; border-radius: 999px;
+    font-size: 13px; font-weight: 600;
+  }
+  .btn {
+    display: block; width: 100%; padding: 14px; margin: 4px 0 14px;
+    background: #b4674a; color: #fff; text-align: center; text-decoration: none;
+    border-radius: 12px; font-size: 16px; font-weight: 600;
+  }
+  .btn:active { opacity: .85; }
+  h2 { font-size: 14px; margin: 22px 0 8px; color: #6b5f54; }
+  ul { margin: 0; padding-left: 1.2em; color: #55493f; }
+  li { margin: 4px 0; }
+  .tip {
+    margin-top: 20px; padding: 12px 14px; border-radius: 12px;
+    background: #eef3ea; color: #556345; font-size: 13.5px; line-height: 1.6;
+  }
+  code { background: #f1eae2; padding: 1px 5px; border-radius: 5px; font-size: 12.5px; }
+  footer { margin-top: 24px; color: #b3a89c; font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>物光口袋</h1>
+    <p class="sub">课表 · 日常 · 倒计时 · 目标 · 笔记</p>
+    <div class="ver" id="ver">最新版</div>
+
+    <a class="btn" id="dl" href="wuguang-pocket-v40.apk" download>下载安装包（APK）</a>
+
+    <h2>这一版改了什么</h2>
+    <ul>
+      <li>倒计时和目标 <b>删得掉了</b>：点开卡片就能编辑或删除</li>
+      <li>作息可以 <b>统一改</b>：改一次，以后每天都按新的来；也能只改某一天</li>
+      <li>新增「软件更新」：有新版时「我的」上会冒小红点</li>
+    </ul>
+
+    <div class="tip">
+      <b>升级不会动你的数据。</b>
+      课表、作息、倒计时、目标、笔记、待办一条都不会变 ——
+      安装时直接覆盖安装（不要先卸载）就行。<br>
+      第一次装如果提示「不允许安装未知应用」，按提示打开开关再回来点安装。
+    </div>
+
+    <h2>给 App 用的更新清单</h2>
+    <p class="sub" style="margin:0">
+      <a href="android.json"><code>android.json</code></a> —— 填在 App 的「我的 → 软件更新」里。
+    </p>
+  </div>
+  <footer>物光口袋 · 更新页</footer>
+</div>
+
+<script>
+/* 从清单里把版本号读出来显示，免得页面上写死的号跟清单对不上。
+   读不到就保持原样 —— 这一页的作用只是"让人能下载"，不值得为它崩掉。 */
+fetch('android.json', { cache: 'no-store' })
+  .then(function (r) { return r.json(); })
+  .then(function (o) {
+    if (o && o.versionName) {
+      document.getElementById('ver').textContent =
+        '最新版 v' + o.versionName + '（内部号 ' + o.versionCode + '）';
+    }
+    if (o && o.apk) document.getElementById('dl').setAttribute('href', o.apk);
+  })
+  .catch(function () { });
+</script>
+</body>
+</html>

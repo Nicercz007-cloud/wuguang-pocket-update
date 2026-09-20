@@ -15,7 +15,7 @@ https://<你的子域>.maoziyun.com/android.json
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-vXX.apk` | 安装包本体 |
+| `wuguang-pocket-1.4.2.apk` | 安装包本体 |
 
 ## 以后发新版，只需要换两个文件
 

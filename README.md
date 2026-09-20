@@ -15,20 +15,20 @@ https://<你的子域>.maoziyun.com/android.json
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-1.4.2.apk` | 安装包本体 |
+| `wuguang-pocket-2.0.1.apk` | 安装包本体 |
 
 ## 以后发新版，只需要换两个文件
 
-1. 把新的 `wuguang-pocket-v42.apk` 放进来（旧的可以留着，也可以删）
+1. 把新的 `wuguang-pocket-2.0.1.apk` 放进来（旧的可以留着，也可以删）
 2. 改 `android.json`：
 
 ```json
 {
-  "versionCode": 31,
-  "versionName": "4.1.1",
+  "versionCode": 33,
+  "versionName": "2.0.1",
   "notes": "这一版改了什么…（支持 \n 换行）",
-  "apk": "wuguang-pocket-v42.apk",
-  "size": 3191297
+  "apk": "wuguang-pocket-2.0.1.apk",
+  "size": 3198189
 }
 ```
 

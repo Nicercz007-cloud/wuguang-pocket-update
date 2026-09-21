@@ -3,10 +3,10 @@
 这个仓库是「物光口袋」的更新发放点，挂在国内静态托管平台
 [帽子云](https://www.maoziyun.com/) 上（GitHub 推送即自动部署）。
 
-App 里的「我的 → 软件更新」填的就是这里的 `android.json`：
+App 里的「我的 → 软件更新」填的就是这里的 `android.json`（App 出厂默认值）：
 
 ```
-https://<你的子域>.maoziyun.com/android.json
+https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.json
 ```
 
 ## 仓库里有什么
@@ -15,24 +15,28 @@ https://<你的子域>.maoziyun.com/android.json
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-2.0.2.apk` | 安装包本体 |
+| `wuguang-pocket-2.0.10.apk` | 安装包本体（当前版） |
 
 ## 以后发新版，只需要换两个文件
 
-1. 把新的 `wuguang-pocket-2.0.2.apk` 放进来（旧的可以留着，也可以删）
+1. 把新的 `wuguang-pocket-2.0.10.apk` 放进来（旧的可以留着，也可以删）
 2. 改 `android.json`：
 
 ```json
 {
-  "versionCode": 35,
-  "versionName": "2.0.2",
+  "versionCode": 43,
+  "versionName": "2.0.10",
   "notes": "这一版改了什么…（支持 \n 换行）",
-  "apk": "wuguang-pocket-2.0.2.apk",
-  "size": 3202009
+  "apk": "wuguang-pocket-2.0.10.apk",
+  "size": 3237017
 }
 ```
 
 然后 `git push`。帽子云会自动重新部署，用户下次打开 App 就会冒小红点。
+
+**`index.html` 不用动** —— 它只认 `android.json`：版本号、按钮指向、体积、更新说明全部从清单读。
+（2026-09-22 之前不是这样：更新说明是**写死**的，于是安装包发到 2.0.10 了，
+这一页还挂着 2.0.2 的说明 —— 打开看着就像"没上架"。）
 
 ## 字段说明
 

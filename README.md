@@ -15,28 +15,33 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-2.0.10.apk` | 安装包本体（当前版） |
+| `wuguang-pocket-2.0.11.apk` | 安装包本体（当前版） |
 
 ## 以后发新版，只需要换两个文件
 
-1. 把新的 `wuguang-pocket-2.0.10.apk` 放进来（旧的可以留着，也可以删）
+1. 把新的 `wuguang-pocket-2.0.11.apk` 放进来（旧的可以留着，也可以删）
 2. 改 `android.json`：
 
 ```json
 {
-  "versionCode": 43,
-  "versionName": "2.0.10",
+  "versionCode": 44,
+  "versionName": "2.0.11",
   "notes": "这一版改了什么…（支持 \n 换行）",
-  "apk": "wuguang-pocket-2.0.10.apk",
-  "size": 3237017
+  "apk": "wuguang-pocket-2.0.11.apk",
+  "size": 3236497
 }
 ```
 
 然后 `git push`。帽子云会自动重新部署，用户下次打开 App 就会冒小红点。
 
-**`index.html` 不用动** —— 它只认 `android.json`：版本号、按钮指向、体积、更新说明全部从清单读。
+**`index.html` 正常情况下不用动** —— 版本号、按钮指向、体积、更新说明全部从 `android.json` 读。
 （2026-09-22 之前不是这样：更新说明是**写死**的，于是安装包发到 2.0.10 了，
 这一页还挂着 2.0.2 的说明 —— 打开看着就像"没上架"。）
+
+⚠ 但页面里还留了**一段兜底**：清单一时取不到时（例如用 `file://` 直接打开）显示的就是它，
+它是写死的，所以**发新版时要顺手把它也改成同一版**。
+不用靠人记得 —— `outputs/_verify-index-page-v211.cjs` 的 **D 态**会拿 `android.json`
+和兜底逐条比，对不上就报红。
 
 ## 字段说明
 

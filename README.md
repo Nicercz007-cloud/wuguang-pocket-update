@@ -24,11 +24,11 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 
 ```json
 {
-  "versionCode": 45,
+  "versionCode": 46,
   "versionName": "2.1.2",
   "notes": "这一版改了什么…（支持 \n 换行）",
   "apk": "wuguang-pocket-2.1.2.apk",
-  "size": 3237205
+  "size": 3238321
 }
 ```
 

@@ -15,20 +15,20 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-2.1.2.apk` | 安装包本体（当前版） |
+| `wuguang-pocket-2.1.3.apk` | 安装包本体（当前版） |
 
 ## 以后发新版，只需要换两个文件
 
-1. 把新的 `wuguang-pocket-2.1.2.apk` 放进来（旧的可以留着，也可以删）
+1. 把新的 `wuguang-pocket-2.1.3.apk` 放进来（旧的可以留着，也可以删）
 2. 改 `android.json`：
 
 ```json
 {
-  "versionCode": 46,
-  "versionName": "2.1.2",
+  "versionCode": 47,
+  "versionName": "2.1.3",
   "notes": "这一版改了什么…（支持 \n 换行）",
-  "apk": "wuguang-pocket-2.1.2.apk",
-  "size": 3238321
+  "apk": "wuguang-pocket-2.1.3.apk",
+  "size": 0
 }
 ```
 

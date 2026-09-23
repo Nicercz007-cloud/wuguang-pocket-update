@@ -15,19 +15,19 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-2.1.4.apk` | 安装包本体（当前版） |
+| `wuguang-pocket-2.1.5.apk` | 安装包本体（当前版） |
 
 ## 以后发新版，只需要换两个文件
 
-1. 把新的 `wuguang-pocket-2.1.4.apk` 放进来（旧的可以留着，也可以删）
+1. 把新的 `wuguang-pocket-2.1.5.apk` 放进来（旧的可以留着，也可以删）
 2. 改 `android.json`：
 
 ```json
 {
-  "versionCode": 48,
-  "versionName": "2.1.4",
+  "versionCode": 49,
+  "versionName": "2.1.5",
   "notes": "这一版改了什么…（支持 \n 换行）",
-  "apk": "wuguang-pocket-2.1.4.apk",
+  "apk": "wuguang-pocket-2.1.5.apk",
   "size": 0
 }
 ```
@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 
 ⚠ 但页面里还留了**一段兜底**：清单一时取不到时（例如用 `file://` 直接打开）显示的就是它，
 它是写死的，所以**发新版时要顺手把它也改成同一版**。
-不用靠人记得 —— `outputs/_verify-index-page-v212.cjs` 的 **D 态**会拿 `android.json`
+不用靠人记得 —— `outputs/_verify-index-page-v215.cjs` 的 **D 态**会拿 `android.json`
 和兜底逐条比，对不上就报红。
 
 ## 字段说明

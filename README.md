@@ -15,7 +15,7 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-2.3.9.apk` | 安装包本体（当前版） |
+| `wuguang-pocket-2.3.10.apk` | 安装包本体（当前版） |
 | `README.md` | 本文件 |
 
 ## 以后发新版：跑一个脚本，推四个文件

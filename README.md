@@ -31,20 +31,19 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 （`outputs/setup-domain-v70.cjs` 可随时重跑，幂等）。但 github.io 在国内手机网络上
 时通时不通，所以域名**主推荐指帽子云**，Pages 只作兜底。
 
-### ⚠ jsDelivr 已经超重（2026-10-24 实测）
+### jsDelivr 超重事故与瘦身（2026-10-24）
 
-仓库（含全部历史 APK）74 MB，超过了 jsDelivr 的 **50 MB 包体上限**：
-新文件（新 APK）从 jsDelivr 拿到的是一行 158 字节的报错文本，不是安装包；
-老文件还能靠缓存苟着。**清单里的 `apk` 字段因此从 2.4.1 起写成 GitHub Pages 的完整地址**——
-App 下载不再依赖 jsDelivr。
+历年 APK 全堆在仓库树里（31 个包，连历史 74 MB），超过 jsDelivr 的 **50 MB 包体上限**
+⇒ 它对整仓停供：新包下不动、连清单都拿不到，出厂源一夜失效。
+当天已把**历史重置为单次提交、树里只留当前版四个文件**（~3.5 MB），jsDelivr 恢复。
+旧历史备份在构建机本地仓库的 `backup-pre-rewrite-20261024` 分支，历年 APK 在
+`outputs/` 与 `归档-20260929/内测APK/` 都有存档。
 
-- 域名（帽子云）生效后：把 App 更新源换成 `https://upd.nicercz007.top/android.json`，
-  并把 `apk` 字段改回**文件名**（相对清单目录补全，走你自己的域名，国内最快）——
-  改回文件名这一步在下一版发布时做，`publish-vNNN.cjs` 的闸门两种写法都认。
-- 想让 jsDelivr 重新可用得给仓库**瘦身历史**（历年 APK 全在 git 历史里），
-  属于重活，不做也不影响上面两条路。
+**以后每发一版仓库历史涨 ~3.4 MB，大约 14 版后又会触顶。** 所以：
 
-
+- 旧 APK 不再留在树里（publish 脚本以后应该顺手删上一版的包）
+- 长期出路是把更新源换成自己的域名（帽子云，不走 jsDelivr 的包体上限）
+- 真触顶了就再做一次历史重置（本地有备份，内容零丢失）
 ## 仓库里有什么
 
 | 文件 | 作用 |

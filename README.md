@@ -50,14 +50,14 @@ https://cdn.jsdelivr.net/gh/Nicercz007-cloud/wuguang-pocket-update@main/android.
 |---|---|
 | `index.html` | 给人看的下载页（帽子云要求根目录有它） |
 | `android.json` | **给 App 看的更新清单** —— 版本号、更新说明、安装包文件名 |
-| `wuguang-pocket-2.5.4.apk` | 安装包本体（当前版） |
+| `wuguang-pocket-2.5.5.apk` | 安装包本体（当前版） |
 | `README.md` | 本文件 |
 
 ## 以后发新版：跑一个脚本，推四个文件
 
 ```bash
-node outputs/publish-v254.cjs --dry   # 先干跑：本地自检 + 读线上现状，不推
-node outputs/publish-v254.cjs         # 正式推
+node outputs/publish-v255.cjs --dry   # 先干跑：本地自检 + 读线上现状，不推
+node outputs/publish-v255.cjs         # 正式推
 ```
 
 推送顺序是 **APK → index.html → README.md → android.json**。
@@ -103,7 +103,7 @@ node outputs/publish-v254.cjs         # 正式推
 
 不用靠人记得：`outputs/_verify-index-page-v222.cjs` 的 **D 态**会拿 `android.json`
 和这段兜底**逐条比**（条数、每条文字、按钮指向的包名），对不上就报红。
-`publish-v254.cjs` 推之前也会再比一次，不一致直接中止。
+`publish-v255.cjs` 推之前也会再比一次，不一致直接中止。
 
 ## 出错了怎么办
 
